@@ -2,85 +2,96 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-	body {
-		font-family: verdana;
-	}
+		body
+		{
+			font-family: verdana;
+		}
 
-	.slidecontainer {
-	  width: 100%;
-	}
-	.slider {
-	  -webkit-appearance: none;
-	  width: 80%;
-	  height: 15px;
-	  border-radius: 5px;
-	  background: #d3d3d3;
-	  outline: none;
-	  opacity: 0.7;
-	  -webkit-transition: .2s;
-	  transition: opacity .2s;
-	  position:relative;
-	  left:10%;
-	}
-	.slider:hover {
-	  opacity: 1;
-	}
-	.slider::-webkit-slider-thumb {
-	  -webkit-appearance: none;
-	  appearance: none;
-	  width: 25px;
-	  height: 25px;
-	  border-radius: 50%;
-	  background: #4CAF50;
-	  cursor: pointer;
-	}
-	.slider::-moz-range-thumb {
-	  width: 25px;
-	  height: 25px;
-	  border-radius: 50%;
-	  background: #4CAF50;
-	  cursor: pointer;
-	}
-	
-    .button {
-      display: inline-block;
-      border-radius: 4px;
-      background-color: #f4511e;
-      border: none;
-      color: #FFFFFF;
-      text-align: center;
-      font-size: 28px;
-      padding: 20px;
-      width: 200px;
-      transition: all 0.5s;
-      cursor: pointer;
-      margin: 5px;
-    }
-    .button span {
-      cursor: pointer;
-      display: inline-block;
-      position: relative;
-      transition: 0.5s;
-    }
-    .button span:after {
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -20px;
-      transition: 0.5s;
-    }
-    .button:hover span {
-      padding-right: 25px;
-    }
-    .button:hover span:after {
-      opacity: 1;
-      right: 0;
-    }
-</style>
+		.slidecontainer
+		{
+			width: 100%;
+		}
+		.slider
+		{
+			-webkit-appearance: none;
+			width: 80%;
+			height: 15px;
+			border-radius: 5px;
+			background: #d3d3d3;
+			outline: none;
+			opacity: 0.7;
+			-webkit-transition: .2s;
+			transition: opacity .2s;
+			position:relative;
+			left:10%;
+		}
+		.slider:hover
+		{
+			opacity: 1;
+		}
+		.slider::-webkit-slider-thumb
+		{
+			-webkit-appearance: none;
+			appearance: none;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+		.slider::-moz-range-thumb
+		{
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: #4CAF50;
+			cursor: pointer;
+		}
+		.button
+		{
+			display: inline-block;
+			border-radius: 4px;
+			background-color: #f4511e;
+			border: none;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 28px;
+			padding: 20px;
+			width: 200px;
+			transition: all 0.5s;
+			cursor: pointer;
+			margin: 5px;
+		}
+		.button span
+		{
+			cursor: pointer;
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;
+		}
+		.button span:after
+		{
+			content: '\00bb';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
+		}
+		.button:hover span
+		{
+			padding-right: 25px;
+		}
+		.button:hover span:after
+		{
+			opacity: 1;
+			right: 0;
+		}
+	</style>
 
 <script>
-function changePerct(){
+function changePerct()
+{
     var slider1 = document.getElementById("ormarS");
     var output1 = document.getElementById("demo1");
     output1.innerHTML = slider1.value;
@@ -121,59 +132,62 @@ function changePerct(){
 </script>
 
 <script>
-function changeOrmar(){
-    var rd = parseInt(document.getElementById('ormarR').value*document.getElementById('ormarS').value*0.0255);
+function changeOrmar()
+{
+	var rd = parseInt(document.getElementById('ormarR').value*document.getElementById('ormarS').value*0.0255);
 	var gn = parseInt(document.getElementById('ormarG').value*document.getElementById('ormarS').value*0.0255);
 	var bl = parseInt(document.getElementById('ormarB').value*document.getElementById('ormarS').value*0.0255);
-	
+
 	// convert the decimal values into hexadecimal
 	var rdhex = (rd < 16) ? "0" + rd.toString(16) : rd.toString(16);
 	var gnhex = (gn < 16) ? "0" + gn.toString(16) : gn.toString(16);
 	var blhex = (bl < 16) ? "0" + bl.toString(16) : bl.toString(16);
-	
+
 	// create a variable that concatenates all the parts
 	var hexcode = "#" + rdhex + gnhex + blhex;
 
-    document.getElementById("myOrmar").style.backgroundColor = hexcode;
-    changePerct();
+	document.getElementById("myOrmar").style.backgroundColor = hexcode;
+	changePerct();
 }
 </script>
 
 <script>
-function changeKrevet(){
-    var rd = parseInt(document.getElementById('krevetR').value*document.getElementById('krevetS').value*0.0255);
+function changeKrevet()
+{
+	var rd = parseInt(document.getElementById('krevetR').value*document.getElementById('krevetS').value*0.0255);
 	var gn = parseInt(document.getElementById('krevetG').value*document.getElementById('krevetS').value*0.0255);
 	var bl = parseInt(document.getElementById('krevetB').value*document.getElementById('krevetS').value*0.0255);
-	
+
 	// convert the decimal values into hexadecimal
 	var rdhex = (rd < 16) ? "0" + rd.toString(16) : rd.toString(16);
 	var gnhex = (gn < 16) ? "0" + gn.toString(16) : gn.toString(16);
 	var blhex = (bl < 16) ? "0" + bl.toString(16) : bl.toString(16);
-	
+
 	// create a variable that concatenates all the parts
 	var hexcode = "#" + rdhex + gnhex + blhex;
 
-    document.getElementById("myKrevet").style.backgroundColor = hexcode;
-    changePerct();
+	document.getElementById("myKrevet").style.backgroundColor = hexcode;
+	changePerct();
 }
 </script>
 
 <script>
-function changeStol(){
-    var rd = parseInt(document.getElementById('stolR').value*document.getElementById('stolS').value*0.0255);
+function changeStol()
+{
+	var rd = parseInt(document.getElementById('stolR').value*document.getElementById('stolS').value*0.0255);
 	var gn = parseInt(document.getElementById('stolG').value*document.getElementById('stolS').value*0.0255);
 	var bl = parseInt(document.getElementById('stolB').value*document.getElementById('stolS').value*0.0255);
-	
+
 	// convert the decimal values into hexadecimal
 	var rdhex = (rd < 16) ? "0" + rd.toString(16) : rd.toString(16);
 	var gnhex = (gn < 16) ? "0" + gn.toString(16) : gn.toString(16);
 	var blhex = (bl < 16) ? "0" + bl.toString(16) : bl.toString(16);
-	
+
 	// create a variable that concatenates all the parts
 	var hexcode = "#" + rdhex + gnhex + blhex;
 
-    document.getElementById("myStol").style.backgroundColor = hexcode;
-    changePerct();
+	document.getElementById("myStol").style.backgroundColor = hexcode;
+	changePerct();
 }
 </script>
 
