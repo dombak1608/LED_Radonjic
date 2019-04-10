@@ -1,6 +1,9 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
+#define wRange 1000
+#define wFreq 20000
+
 HTTPClient http;
 
 const char* ssid = "karl2.4ghz";
@@ -23,6 +26,8 @@ bool delayRunning = false;
 
 void setup()
 {
+  analogWriteRange(wRange);
+  analogWriteFreq(wFreq);
   for(int i=0;i<9;i++)
   {    
     pinMode(outPins[i], OUTPUT);
