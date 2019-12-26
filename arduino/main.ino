@@ -2,14 +2,14 @@
 #include <ESP8266HTTPClient.h>
 
 #define wRange 1000
-#define wFreq 20000
+#define wFreq 2000
 
 HTTPClient http;
 
 const char* ssid = "karl2.4ghz";
 const char* password = "23456789";
 
-const char* host = "http://radonjicled.000webhostapp.com/arduino.php";
+const char* host = "http://radonjicled2.000webhostapp.com/arduino.php";
 
 const char outPins[9] = {16, 5, 4, 14, 12, 13, 0, 2, 15};
 
