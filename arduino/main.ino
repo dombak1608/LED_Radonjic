@@ -2,7 +2,7 @@
 #include <ESP8266HTTPClient.h>
 
 #define wRange 1000
-#define wFreq 2000
+#define wFreq 1000
 
 HTTPClient http;
 
