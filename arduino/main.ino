@@ -23,6 +23,7 @@ String webString;
 
 unsigned long delayWeb = 0;
 bool delayRunning = false;
+bool changeComplete = false;
 
 void setup()
 {
@@ -65,21 +66,28 @@ void loop()
   for(int i=0;i<12;i++)
   {
     if (ledColors[i] != webColors[i])
+    {
       fadingColors();
+      changeComplete = true;
+    }
+  }
+  if(changeComplete)
+  {
+    changeComplete = false;
+    Serial.print("LED: ");
+    for(int j=0;j<12;j++)
+    {
+      Serial.print(ledColors[j]);
+      if(j<11)
+        Serial.print("\t");
+      else
+        Serial.println();
+    }
   }
 }
 
 void fadingColors()
 {
-  Serial.print("LED: ");
-  for(int i=0;i<12;i++)
-  {
-    Serial.print(ledColors[i]);
-    if(i<11)
-      Serial.print("\t");
-    else
-      Serial.println();
-  }
   for(int i=0;i<12;i++)
   {
     delay(fadeDelay);
